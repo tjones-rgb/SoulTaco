@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.screens;
 
 import java.util.Scanner;
 
@@ -30,11 +30,11 @@ public class HomeScreen {
         }
         switch (choice) {
 
-            case 1 -> showOrderscreen();
+            case 1 -> Orderscreen();
 
             case 0 -> {
                 running = false;
-                music.stopMusic();
+              //  music.stopMusic();
                 System.out.println("Stay Blessed");
             }
             default -> System.out.println("Error PLease Try Again");
