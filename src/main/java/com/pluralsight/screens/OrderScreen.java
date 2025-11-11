@@ -1,5 +1,7 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.model.Order;
+
 import java.util.Scanner;
 
 public class OrderScreen{
@@ -10,7 +12,7 @@ public class OrderScreen{
         this.scan = scan;
         this.order = order;
     }
-        public void display () {
+        public void display() {
         boolean ordering = true;
 
     while (ordering) {
@@ -24,12 +26,19 @@ public class OrderScreen{
         System.out.println("0) Cancel Order");
         System.out.println("Please Make Your Choice");
 
-        int choice = scanner.nextInt;
-        scanner.nextLine();
+        int choice = scan.nextInt();
+        scan.nextLine();
 
         switch (choice) {
-            case 1 ->
-            case
+            case 1 -> new AddTaco(scan, order).display();
+            case 2 -> new AddDrink(scan, order).display();
+            case 3 -> new AddChips(scan, order).display();
+            case 4 -> new Checkout(scan, order).display();
+            case 0 -> {
+                System.out.println("Order Has been canceled");
+            ordering = false;}
+        }
+        default -> System.out.println("Error try again");
         }
     }
 }
