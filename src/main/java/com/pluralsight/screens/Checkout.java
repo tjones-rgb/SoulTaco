@@ -12,7 +12,8 @@ public class Checkout {
         this.scan = scan;
         this.order = order;
     }
-    public void display(){
+
+    public void display() {
         System.out.println("\n===============================");
         System.out.println(" CHECKOUT ");
         System.out.println("===============================");
@@ -21,10 +22,11 @@ public class Checkout {
         System.out.println("Confirm Order? yes/no: ");
         String Confirm = scan.nextLine();
 
-        if(confirm.equalsIgnoreCase("yes"));
-        order.saveReceipt();
-        System.out.println("Receipt saved Returning Home");
-    }else {
-        System.out.println("Order canceled.");
+        if (confirm.equalsIgnoreCase("yes")) {
+            order.saveReceipt();
+            System.out.println("Receipt saved Returning Home");
+        } else {
+            System.out.println("Order canceled.");
+        }
     }
 }

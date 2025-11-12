@@ -15,7 +15,7 @@ public class Taco extends MenuItem{
     private final List<String> sauces = new ArrayList<>();
 
     public Taco(String name, double price, String size, String shell, boolean deepFried) {
-        super(name, price);
+        super("Custom Taco", price);
         this.size = size;
         this.shell = shell;
         this.deepFried = deepFried;
@@ -26,7 +26,7 @@ public class Taco extends MenuItem{
     public void addSauce(String sauce) {sauces.add(sauce);}
 
     public double getBasePrice(){
-        String Size = size == null ? "" : size.trim().toLowerCase();
+        String s = (size == null) ? "" : size.trim().toLowerCase();
         if (size.equals("single")) return 3.50;
         if (size.equals("3-tacos") || size.equals("3-taco")) return 9.00;
         if (size.equals("burrito")) return 8.50;

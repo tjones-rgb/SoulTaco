@@ -2,8 +2,9 @@ package com.pluralsight.model;
 
 public class Topping {
     private final String name;
-    private final double price;
     private final String type;
+    private final double price;
+
 
     public Topping (String name, String type, double price) {
         this.name = name;

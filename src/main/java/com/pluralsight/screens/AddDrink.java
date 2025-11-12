@@ -13,12 +13,12 @@ public class AddDrink {
         this.order = order;
     }
     public void display(){
-        System.out.println("Choose your size (Small/Medium/Large): ");
-        String size scan.nextLine();
-        System.out.println("Flavor: ");
+        System.out.print("Choose your size (Small/Medium/Large): ");
+        String size = scan.nextLine();
+        System.out.print("Flavor: ");
         String flavor = scan.nextLine();
-        order.addItem(new Drink(size, flour));
-        System.out.println('Drink Added');
+        order.addItem(new Drink(size, flavor));
+        System.out.println("Drink Added");
 
     }
 }
