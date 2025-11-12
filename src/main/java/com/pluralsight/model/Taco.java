@@ -52,6 +52,17 @@ public class Taco extends MenuItem{
 
         StringBuilder sb = new StringBuilder();
         sb.append(size).append("  (").append(shell).append(")");
-        
+        if (deepFried) sb.append(" Deep Fried ");
+        sb.append("\n Meats: ").append(meatStr.isEmpty() ? "None" : meatStr);
+        sb.append("\n Cheeses: ").append(cheesesStr.isEmpty() ? "None" : cheesesStr);
+        sb.append("\n Other Toppings: ").append(toppingsStr.isEmpty() ? "None" : toppingsStr);
+        sb.append("\n Sauces: ").append(saucesStr.isEmpty() ? "None" : saucesStr);
+        sb.append("\n Price: $").append((String.format("%.2f", getPrice())));
+        return sb.toString();
+    }
+
+    @Override
+    public String toString() { return getDetail();
+
     }
 }
