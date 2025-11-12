@@ -1,5 +1,7 @@
 package com.pluralsight.screens;
 
+import com.pluralsight.model.Order;
+
 import java.util.Scanner;
 
 public class HomeScreen {
@@ -27,19 +29,22 @@ public class HomeScreen {
 
             int choice = scanner.nextInt();
             scanner.nextLine();
-        }
-        switch (choice) {
 
-            case 1 -> Orderscreen();
+            switch (choice) {
 
-            case 0 -> {
-                running = false;
-              //  music.stopMusic();
-                System.out.println("Stay Blessed");
+                case 1 -> {
+                    OrderScreen orderScreen = new OrderScreen(scanner, new Order());
+                    orderScreen.display();
+                }
+
+                case 0 -> {
+                    running = false;
+                    //  music.stopMusic();
+                    System.out.println("Stay Blessed");
+                }
+                default -> System.out.println("Error PLease Try Again");
+
             }
-            default -> System.out.println("Error PLease Try Again");
-
-
         }
     }
 }

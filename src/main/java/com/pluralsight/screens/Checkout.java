@@ -20,7 +20,7 @@ public class Checkout {
         order.printOrder();
 
         System.out.println("Confirm Order? yes/no: ");
-        String Confirm = scan.nextLine();
+        String confirm = scan.nextLine();
 
         if (confirm.equalsIgnoreCase("yes")) {
             order.saveReceipt();

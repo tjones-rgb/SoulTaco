@@ -48,7 +48,7 @@ public class Order {
 
                 }
 
-                fw.write(String.format("TOTAL: $%.2f\n", getTotal());
+                fw.write(String.format("TOTAL: $%.2f\n", getTotal()));
             }
                 System.out.println("Receipt saved: " + filename);
         }catch (IOException e) {

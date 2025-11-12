@@ -23,7 +23,7 @@ public class AddTaco {
         System.out.println("Taco size (Single/3-Taco/Burrito): ");
         String size = scan.nextLine();
 
-        Taco taco = new Taco(size, shell, false);
+        Taco taco = new Taco("Custom Taco", 0.0, size ,shell ,false);
 
         System.out.println("Add Meats");
         while (true) {
@@ -37,14 +37,14 @@ public class AddTaco {
             System.out.println("Cheese: ");
             String cheese = scan.nextLine();
             if (cheese.equalsIgnoreCase("done")) break;
-            taco.addCheese(new topping(cheese, "premium", 1.50));
+            taco.addCheese(new Topping(cheese, "premium", 1.50));
         }
         System.out.println("\nAdd other toppings (enter done to stop):");
         while(true){
             System.out.println("Topping: ");
             String Topping = scan.nextLine();
             if(Topping.equalsIgnoreCase("done")) break;
-            taco.addTopping(new Topping(topping,"regular", 0.25));
+            taco.addTopping(new Topping(Topping,"regular", 0.25));
         }
         System.out.println("\nSelect sauaces (enter done to stop): ");
         while(true){
