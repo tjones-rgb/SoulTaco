@@ -2,6 +2,7 @@ package com.pluralsight.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Taco extends MenuItem{
     private final String size;
@@ -32,4 +33,25 @@ public class Taco extends MenuItem{
         return 0.0;
     }
 
+    @Override
+    public double getPrice() {
+        double base = getBasePrice();
+        double meatsTotal = meats.stream().mapToDouble(Topping::getPrice).sum();
+        double cheesesTotal = cheeses.stream().mapToDouble(Topping::getPrice).sum();
+        double toppingsTotal = toppings.stream().mapToDouble(Topping::getPrice).sum();
+        return base + meatsTotal + cheesesTotal + toppingsTotal;
+
+    }
+
+    @Override
+    public String getDetail() {
+        String meatStr = meats.stream().map(Topping :: getName).collect(Collectors.joining(","));
+        String cheesesStr = cheeses.stream().map(Topping :: getName).collect(Collectors.joining(","));
+        String toppingsStr = toppings.stream().map(Topping :: getName).collect(Collectors.joining(","));
+        String saucesStr = String.join(", ", sauces);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(size).append("  (").append(shell).append(")");
+        
+    }
 }
