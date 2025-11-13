@@ -3,7 +3,9 @@ package com.pluralsight.screens;
 import com.pluralsight.model.Order;
 import com.pluralsight.model.Taco;
 import com.pluralsight.model.Topping;
+import com.pluralsight.utils.ToppingLoader;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class AddTaco {
@@ -16,7 +18,11 @@ public class AddTaco {
     }
 
     public void display() {
+        List<Topping> allToppings = ToppingLoader.loadToppings("src/resources/ToppingsData.csv");
+
+
         System.out.println("\n---Customize your taco---");
+
         System.out.println("Shell Type (corn/flour/hard shell/bowl): ");
         String shell = scan.nextLine();
 
@@ -25,28 +31,72 @@ public class AddTaco {
 
         Taco taco = new Taco("Custom Taco", 0.0, size ,shell ,false);
 
+        System.out.println("\nAvailable Meats:");
+        allToppings.stream()
+                .filter(t -> t.getType().equalsIgnoreCase("Meat"))
+                .forEach(t -> System.out.println("- " + t.getName() + " ($" + t.getPrice() + ")"));
+
         System.out.println("Add Meats");
         while (true) {
             System.out.println("Meat: ");
             String meat = scan.nextLine();
             if (meat.equalsIgnoreCase("done")) break;
-            taco.addMeat(new Topping(meat, "preiom", 2.00));
+
+            allToppings.stream()
+                    .filter(t -> t.getName().equalsIgnoreCase(meat))
+                    .findFirst()
+                    .ifPresentOrElse(
+                            taco ::addMeat,
+                            ()-> System.out.println("Not found.Try again")
+                    );
         }
+
+        System.out.println("\nAvailable Cheese:");
+        allToppings.stream()
+                .filter(t -> t.getType().equalsIgnoreCase("Cheese"))
+                .forEach(t -> System.out.println("- " + t.getName() + " ($" + t.getPrice() + ")"));
+
         System.out.println("\n---Add cheese (enter done to stop):");
         while (true) {
             System.out.println("Cheese: ");
             String cheese = scan.nextLine();
             if (cheese.equalsIgnoreCase("done")) break;
-            taco.addCheese(new Topping(cheese, "premium", 1.50));
+
+            allToppings.stream()
+                    .filter(t -> t.getName().equalsIgnoreCase(cheese))
+                    .findFirst()
+                    .ifPresentOrElse(
+                            taco::addCheese,
+                            () -> System.out.println("Not Found Try Again")
+                    );
         }
+
+        System.out.println("\nAvailable Toppings:");
+        allToppings.stream()
+                .filter(t -> t.getType().equalsIgnoreCase("Toppings"))
+                .forEach(t -> System.out.println("- " + t.getName() + " ($" + t.getPrice() + ")"));
+
         System.out.println("\nAdd other toppings (enter done to stop):");
         while(true){
             System.out.println("Topping: ");
             String Topping = scan.nextLine();
             if(Topping.equalsIgnoreCase("done")) break;
-            taco.addTopping(new Topping(Topping,"regular", 0.25));
+
+            allToppings.stream()
+                    .filter(t -> t.getName().equalsIgnoreCase(Topping))
+                    .findFirst()
+                    .ifPresentOrElse(
+                            taco ::addTopping,
+                            ()-> System.out.println("Not found.Try again")
+                    );
         }
-        System.out.println("\nSelect sauaces (enter done to stop): ");
+
+        System.out.println("\nAvailable Sauces:");
+        allToppings.stream()
+                .filter(t -> t.getType().equalsIgnoreCase("Sauces"))
+                .forEach(t -> System.out.println("- " + t.getName()));
+
+        System.out.println("\nSelect sauces (enter done to stop): ");
         while(true){
             System.out.println("Sauce: ");
             String sauce = scan.nextLine();
@@ -59,6 +109,6 @@ public class AddTaco {
             System.out.println("coming right up");
         }
         order.addItem(taco);
-        System.out.println("taco added to your order");
+        System.out.println("Taco added to your order");
     }
 }

@@ -1,0 +1,30 @@
+Category,Name,SinglePrice,ThreeTacoPrice,BurritoPrice,Included
+Meat,Carne Asada,1.00,2.00,3.00,false
+Meat,Al Pastor,1.00,2.00,3.00,false
+Meat,Carnitas,1.00,2.00,3.00,false
+Meat,Pollo,1.00,2.00,3.00,false
+Meat,Chorizo,1.00,2.00,3.00,false
+Meat,Pescado,1.00,2.00,3.00,false
+Extra Meat,Extra Meat,0.50,1.00,1.50,false
+Cheese,Queso Fresco,0.75,1.50,2.25,false
+Cheese,Oaxaca,0.75,1.50,2.25,false
+Cheese,Cotija,0.75,1.50,2.25,false
+Cheese,Cheddar,0.75,1.50,2.25,false
+Extra Cheese,Extra Cheese,0.30,0.60,0.90,false
+Regular,Lettuce,0.00,0.00,0.00,true
+Regular,Cilantro,0.00,0.00,0.00,true
+Regular,Onions,0.00,0.00,0.00,true
+Regular,Tomatoes,0.00,0.00,0.00,true
+Regular,Jalapeños,0.00,0.00,0.00,true
+Regular,Radishes,0.00,0.00,0.00,true
+Regular,Pico de Gallo,0.00,0.00,0.00,true
+Regular,Guacamole,0.00,0.00,0.00,true
+Regular,Corn,0.00,0.00,0.00,true
+Sauce,Salsa Verde,0.00,0.00,0.00,true
+Sauce,Salsa Roja,0.00,0.00,0.00,true
+Sauce,Chipotle,0.00,0.00,0.00,true
+Sauce,Habanero,0.00,0.00,0.00,true
+Sauce,Mild,0.00,0.00,0.00,true
+Sauce,Extra Hot,0.00,0.00,0.00,true
+Side,Lime Wedges,0.00,0.00,0.00,true
+Side,Crema,0.00,0.00,0.00,true

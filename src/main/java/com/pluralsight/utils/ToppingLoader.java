@@ -4,6 +4,7 @@ import com.pluralsight.model.Topping;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -11,7 +12,7 @@ public class ToppingLoader {
 
     public static List<Topping>loadToppings(String filePath) {
         try {
-            return Files.lines(Path.get(filePath))
+            return Files.lines(Path.of(filePath))
                     .skip(1)
                     .map(line -> line.split(","))
                     .map(data -> new Topping(

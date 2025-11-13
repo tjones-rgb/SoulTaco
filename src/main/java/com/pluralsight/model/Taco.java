@@ -16,8 +16,6 @@ public class Taco extends MenuItem{
     private final List<Topping> toppings = new ArrayList<>();
     private final List<String> sauces = new ArrayList<>();
 
-    List<Topping> allToppings = ToppingLoader.loadToppings("src/resources/toppings.csv");
-
 
     public Taco(String name, double price, String size, String shell, boolean deepFried) {
         super("Custom Taco", price);
