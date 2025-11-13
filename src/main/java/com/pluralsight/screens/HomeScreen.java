@@ -25,7 +25,7 @@ public class HomeScreen {
             System.out.println("===============================");
             System.out.println("1) New Order");
             System.out.println("0) Exit");
-            System.out.print("Please Choose");
+            System.out.print("Please Choose:");
 
             int choice = scanner.nextInt();
             scanner.nextLine();

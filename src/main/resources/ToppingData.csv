@@ -1,0 +1,25 @@
+Category,Name,Price
+Meat,Carne Asada,2.00
+Meat,Al Pastor,2.00
+Meat,Carnitas,2.00
+Meat,Pollo,2.00
+Meat,Chorizo,2.00
+Meat,Pescado,2.00
+Cheese,Queso Fresco,1.50
+Cheese,Oaxaca,1.50
+Cheese,Cotija,1.50
+Cheese,Cheddar,1.50
+Regular,Lettuce,0.25
+Regular,Cilantro,0.25
+Regular,Onions,0.25
+Regular,Tomatoes,0.25
+Regular,Jalapeños,0.25
+Regular,Radishes,0.25
+Regular,Guacamole,0.50
+Regular,Corn,0.25
+Sauce,Salsa Verde,0.00
+Sauce,Salsa Roja,0.00
+Sauce,Chipotle,0.00
+Sauce,Habanero,0.00
+Sauce,Mild,0.00
+Sauce,Extra Hot,0.00

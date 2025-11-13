@@ -18,7 +18,7 @@ public class AddTaco {
     }
 
     public void display() {
-        List<Topping> allToppings = ToppingLoader.loadToppings("src/resources/ToppingsData.csv");
+        List<Topping> allToppings = ToppingLoader.loadToppings("src/resources/ToppingData.csv");
 
 
         System.out.println("\n---Customize your taco---");
