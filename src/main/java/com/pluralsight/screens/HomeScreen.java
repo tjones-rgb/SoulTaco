@@ -7,11 +7,10 @@ import java.util.Scanner;
 public class HomeScreen {
     private Scanner scanner = new Scanner(System.in);
     private boolean running = true;
-    //  private static final MusicPlayer music = new MusicPlayer();
+
 
     public static void main(String[] args) {
-        //  music.playMusic ("resources/background.wav");
-        //  HomeScreen();
+
     }
 
 
@@ -39,7 +38,7 @@ public class HomeScreen {
 
                 case 0 -> {
                     running = false;
-                    //  music.stopMusic();
+
                     System.out.println("Stay Blessed");
                 }
                 default -> System.out.println("Error PLease Try Again");

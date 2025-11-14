@@ -1,0 +1,10 @@
+SOUL-TACO Receipt
+
+Single  (corn)
+ Meats: Pollo
+ Cheeses: Cheddar
+ Other Toppings: None
+ Sauces: None
+ Price: $3.50
+
+TOTAL: $3.50
